@@ -3,7 +3,7 @@ import java.util.Random;
 public class Customer {
 
 
-    private int phoneNumber;
+    private String phoneNumber;
     private String firstName;
     private String lastName;
     private int points;
@@ -12,7 +12,7 @@ public class Customer {
 
     Random random = new Random();
 
-    Customer(String FirstName, String LastName, int PhoneNumber){
+    Customer(String FirstName, String LastName, String PhoneNumber){
         firstName = FirstName;
         lastName = LastName;
         phoneNumber = PhoneNumber;
@@ -22,9 +22,6 @@ public class Customer {
     }
 
     Customer(){
-        firstName = "";
-        lastName = "";
-        phoneNumber = 0;
         customerId = random.nextInt(99999998) + 1;
         points = 0;
         totalLifetimeSpend = 0;
@@ -38,7 +35,7 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    public void setPhoneNumber(int phoneNumber){
+    public void setPhoneNumber(String phoneNumber){
         this.phoneNumber = phoneNumber;
     }
 
@@ -62,7 +59,7 @@ public class Customer {
         return customerId;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
@@ -78,6 +75,10 @@ public class Customer {
         totalLifetimeSpend += orderAmount;
     }
 
-
+    @Override
+    public String toString(){
+        return "Name: " + firstName + " " + lastName + "\nCustomer ID: " + customerId + "\nPhone Number: " + phoneNumber + "\nTotal Lifetime Spend: "
+                + totalLifetimeSpend + "\nTotal Points: " + points;
+    }
 
 }
