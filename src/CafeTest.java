@@ -23,4 +23,12 @@ class CafeTest {
         assertNotNull(cafe.getCustomer(0));
     }
 
+    @Test
+    void addCustomer2(){
+        Cafe cafe = new Cafe();
+        Customer person1 = new Customer();
+        cafe.addCustomer(person1);
+        assertNotNull(cafe.getCustomer(0));
+    }
+
 }
