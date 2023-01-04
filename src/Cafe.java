@@ -44,4 +44,8 @@ public class Cafe {
         numberOfMenuItems++;
     }
 
+    public void removeMenuItem(MenuItem menuItem){
+        menuItems.remove(menuItem);
+    }
+
 }

@@ -1,30 +1,36 @@
+import java.util.Scanner;
+
 public class Driver {
 
     public static void main(String[] args) {
-        Cafe RobsCafe = new Cafe("Big Rob's Cafe");
 
-        RobsCafe.addCustomer("Robert", "Tonos", "6019552504");
+        Cafe cafe1 = new Cafe("Big Rob's");
 
-        Cafe EdsCafe = new Cafe("Big Rob's Cafe");
+        Cafe cafe2 = new Cafe("Big Ed's");
 
-        EdsCafe.addCustomer("Robert", "Tonos", "6019552504");
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println(RobsCafe.getCustomer(0).toString());
+        Customer customer1 = new Customer();
 
-        RobsCafe.addItemToMenu("Cold Brew", 3.15, 5, 155, "Small");
+        System.out.println("What's your first name");
+        customer1.setFirstName(scanner.next());
 
-        RobsCafe.cafeCustomers.get(0).addToOrder(RobsCafe.menuItems.get(0));
+        System.out.println("What's your last name");
+        customer1.setLastName(scanner.next());
 
-        RobsCafe.cafeCustomers.get(0).payForOrder();
+        System.out.println("What's your phone number?");
+        customer1.setPhoneNumber(scanner.next());
 
-        EdsCafe.addItemToMenu("Cold Brew", 3.15, 5, 155, "Small");
+        System.out.println("Would you like to join to shop at Big Rob's or Big Ed's Cafe today?");
 
-        EdsCafe.cafeCustomers.get(0).addToOrder(RobsCafe.menuItems.get(0));
+        String choice = scanner.next();
 
-        EdsCafe.cafeCustomers.get(0).payForOrder();
+        if(choice.equals("Rob's")){
+            cafe1.addCustomer(customer1);
+        }
 
-        System.out.println(RobsCafe.cafeCustomers.get(0).getTotalLifetimeSpend());
+        System.out.println(cafe1.getCustomer(0).toString());
 
-        System.out.println(EdsCafe.cafeCustomers.get(0).getTotalLifetimeSpend());
+
     }
 }
