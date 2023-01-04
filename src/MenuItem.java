@@ -17,11 +17,12 @@ public class MenuItem {
         calorieContent = 0;
     }
 
-    MenuItem(String name, double price, int calories, int caffeine){
+    MenuItem(String name, double price, int calories, int caffeine, String Size){
         choiceName = name;
         itemPrice = price;
         calorieContent = calories;
         caffeineContent = caffeine;
+        size = Size;
     }
 
 
@@ -56,4 +57,6 @@ public class MenuItem {
     public void setCalorieContent(int calorieContent) {
         this.calorieContent = calorieContent;
     }
+
+
 }

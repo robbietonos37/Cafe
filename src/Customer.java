@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Customer {
@@ -9,6 +10,8 @@ public class Customer {
     private int points;
     private double totalLifetimeSpend;
     private int customerId;
+
+    ArrayList<MenuItem> customerOrder = new ArrayList<>();
 
     Random random = new Random();
 
@@ -73,6 +76,22 @@ public class Customer {
 
     public void buyCoffee(double orderAmount){
         totalLifetimeSpend += orderAmount;
+    }
+
+    public void addToOrder(MenuItem menuItem){
+        customerOrder.add(menuItem);
+    }
+
+    public double getTotalCost(){
+        double total = 0.0;
+        for(MenuItem choice: this.customerOrder){
+            total += choice.getItemPrice();
+        }
+        return total;
+    }
+
+    public void payForOrder(){
+        this.totalLifetimeSpend += this.getTotalCost();
     }
 
     @Override
