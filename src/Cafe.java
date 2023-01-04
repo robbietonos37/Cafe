@@ -39,6 +39,9 @@ public class Cafe {
         numberOfMenuItems++;
     }
 
-
+    public void addItemToMenu(MenuItem menuItem){
+        menuItems.add(menuItem);
+        numberOfMenuItems++;
+    }
 
 }
