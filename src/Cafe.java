@@ -48,4 +48,8 @@ public class Cafe {
         menuItems.remove(menuItem);
     }
 
+    public void addToCustomerFavorites(Customer customer, MenuItem menuItem){
+        customer.addToFavorites(menuItem);
+    }
+
 }

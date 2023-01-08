@@ -31,4 +31,12 @@ class CafeTest {
         assertNotNull(cafe.getCustomer(0));
     }
 
+    @Test
+    void addItemToMenu(){
+        Cafe cafe3 = new Cafe();
+        MenuItem newItem = new MenuItem();
+        cafe3.addItemToMenu(newItem);
+        assertNotNull(cafe3.menuItems.get(0));
+    }
+
 }

@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -11,6 +12,8 @@ public class Customer {
     private int customerId;
 
     ArrayList<MenuItem> customerOrder = new ArrayList<>();
+
+    ArrayList<MenuItem> customerFavorites = new ArrayList<>();
 
     Random random = new Random();
 
@@ -79,6 +82,10 @@ public class Customer {
 
     public void addToOrder(MenuItem menuItem){
         customerOrder.add(menuItem);
+    }
+
+    public void addToFavorites(MenuItem menuItem){
+        customerFavorites.add(menuItem);
     }
 
     public double getTotalCost(){
