@@ -39,4 +39,14 @@ class CafeTest {
         assertNotNull(cafe3.menuItems.get(0));
     }
 
+    @Test
+    void addItemToCustomerFavorites(){
+        Cafe cafe4 = new Cafe();
+        Customer newbie = new Customer();
+        MenuItem newCoffee = new MenuItem();
+        cafe4.addCustomer(newbie);
+        cafe4.getCustomer(0).addToFavorites(newCoffee);
+        assertNotNull(cafe4.getCustomer(0).customerFavorites.get(0));
+    }
+
 }
