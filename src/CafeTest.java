@@ -69,4 +69,17 @@ class CafeTest {
         assertEquals(cafe5.menuItems.get(1), awesomeFrappe);
     }
 
+    @Test
+    void removeItemFromMenu2(){
+        Cafe cafe6 = new Cafe();
+        MenuItem newColdBrew = new MenuItem();
+        MenuItem terribleColdBrew = new MenuItem();
+        MenuItem awesomeColdBrew = new MenuItem();
+        cafe6.menuItems.add(newColdBrew);
+        cafe6.menuItems.add(terribleColdBrew);
+        cafe6.menuItems.add(awesomeColdBrew);
+        cafe6.removeMenuItem(terribleColdBrew);
+        assertEquals(cafe6.menuItems.get(1), awesomeColdBrew);
+    }
+
 }
