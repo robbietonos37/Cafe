@@ -10,6 +10,8 @@ public class MenuItem {
 
     private String size;
 
+    private String flavor;
+
     MenuItem(){
         choiceName = "";
         itemPrice = 0.0;
@@ -58,5 +60,8 @@ public class MenuItem {
         this.calorieContent = calorieContent;
     }
 
+    public void setFlavor(String newFlavor){
+        flavor = newFlavor;
+    }
 
 }

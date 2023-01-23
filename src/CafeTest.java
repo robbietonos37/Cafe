@@ -40,6 +40,13 @@ class CafeTest {
     }
 
     @Test
+    void addItemToMenu2(){
+        Cafe cafeThree = new Cafe();
+        cafeThree.addItemToMenu("Cold Brew", 3.75, 10, 175, "Large");
+        assertEquals(cafeThree.menuItems.get(0).getCaffeineContent(), 175);
+    }
+
+    @Test
     void addItemToCustomerFavorites(){
         Cafe cafe4 = new Cafe();
         Customer newbie = new Customer();
@@ -47,6 +54,19 @@ class CafeTest {
         cafe4.addCustomer(newbie);
         cafe4.getCustomer(0).addToFavorites(newCoffee);
         assertNotNull(cafe4.getCustomer(0).customerFavorites.get(0));
+    }
+
+    @Test
+    void removeItemFromMenu(){
+        Cafe cafe5 = new Cafe();
+        MenuItem newFrappe = new MenuItem();
+        MenuItem terribleFrappe = new MenuItem();
+        MenuItem awesomeFrappe = new MenuItem();
+        cafe5.menuItems.add(newFrappe);
+        cafe5.menuItems.add(terribleFrappe);
+        cafe5.menuItems.add(awesomeFrappe);
+        cafe5.menuItems.remove(1);
+        assertEquals(cafe5.menuItems.get(1), awesomeFrappe);
     }
 
 }
