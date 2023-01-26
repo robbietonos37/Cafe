@@ -9,7 +9,7 @@ public class Customer {
     private String lastName;
     private int points;
     private double totalLifetimeSpend;
-    private int customerId;
+    private final int customerId;
 
     ArrayList<MenuItem> customerOrder = new ArrayList<>();
 
@@ -76,10 +76,6 @@ public class Customer {
         return points;
     }
 
-    public void buyCoffee(double orderAmount){
-        totalLifetimeSpend += orderAmount;
-    }
-
     public void addToOrder(MenuItem menuItem){
         customerOrder.add(menuItem);
     }
@@ -98,6 +94,7 @@ public class Customer {
 
     public void payForOrder(){
         this.totalLifetimeSpend += this.getTotalCost();
+        this.points += Math.floor(this.getTotalCost());
         this.customerOrder.clear();
         //this will add total to customer lifetime spend and clear the current order.
     }

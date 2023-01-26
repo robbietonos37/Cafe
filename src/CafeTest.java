@@ -82,4 +82,12 @@ class CafeTest {
         assertEquals(cafe6.menuItems.get(1), awesomeColdBrew);
     }
 
+    @Test
+    void addtoCustomerFavorites(){
+        Cafe cafe7 = new Cafe();
+
+    }
+
+
+
 }
