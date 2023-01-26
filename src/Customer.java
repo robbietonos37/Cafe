@@ -98,6 +98,8 @@ public class Customer {
 
     public void payForOrder(){
         this.totalLifetimeSpend += this.getTotalCost();
+        this.customerOrder.clear();
+        //this will add total to customer lifetime spend and clear the current order.
     }
 
     @Override
