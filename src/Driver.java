@@ -31,7 +31,7 @@ public class Driver {
         else if (choice.equals("Ed's")){
             cafe2.addCustomer(customer1);
         }
-        else 
+
 
         System.out.println(cafe1.getCustomer(0).toString());
 
