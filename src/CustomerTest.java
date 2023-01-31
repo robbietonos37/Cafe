@@ -26,4 +26,17 @@ class CustomerTest {
         assertEquals(cafeTest.getCustomer(0).customerOrder.get(0),testFrappe);
     }
 
+    @Test
+    void payForOrderTest(){
+        Customer customer4 = new Customer();
+        Cafe cafeTest2 = new Cafe();
+        MenuItem coldBrewSki = new MenuItem();
+        coldBrewSki.setItemPrice(4.50);
+        cafeTest2.addItemToMenu(coldBrewSki);
+        cafeTest2.addCustomer(customer4);
+        cafeTest2.getCustomer(0).addToOrder(coldBrewSki);
+        cafeTest2.getCustomer(0).payForOrder();
+        assertEquals(cafeTest2.getCustomer(0).getTotalLifetimeSpend(), 4.50);
+    }
+
 }
