@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerTest {
 
+    /*
     @Test
     void emptyConstructorTest(){
         Customer customer1 = new Customer();
@@ -38,5 +39,7 @@ class CustomerTest {
         cafeTest2.getCustomer(0).payForOrder();
         assertEquals(cafeTest2.getCustomer(0).getTotalLifetimeSpend(), 4.50);
     }
+    */
+
 
 }

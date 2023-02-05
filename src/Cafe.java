@@ -6,6 +6,8 @@ public class Cafe {
 
     MenuManager menuManager = new MenuManager();
 
+    CustomerManager customerManager = new CustomerManager();
+
     Cafe(){
         cafeName = "";
     }

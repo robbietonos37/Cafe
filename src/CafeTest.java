@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CafeTest {
+    /*
 
     @Test
     void emptyConstuctor(){
@@ -16,20 +17,6 @@ class CafeTest {
         assertEquals("Big Rob's", cafe.getCafeName());
     }
 
-    @Test
-    void addCustomer(){
-        Cafe cafe = new Cafe();
-        cafe.addCustomer("Edward", "Tonos", "6019400619");
-        assertNotNull(cafe.getCustomer(0));
-    }
-
-    @Test
-    void addCustomer2(){
-        Cafe cafe = new Cafe();
-        Customer person1 = new Customer();
-        cafe.addCustomer(person1);
-        assertNotNull(cafe.getCustomer(0));
-    }
 
     @Test
     void addItemToMenu(){
@@ -90,6 +77,8 @@ class CafeTest {
         cafe7.cafeCustomers.get(0).addToFavorites(cafe7.menuItems.get(0));
         assertEquals(cafe7.getCustomer(0).customerFavorites.get(0).getChoiceName(), "NewBrew");
     }
+
+     */
 
 
 

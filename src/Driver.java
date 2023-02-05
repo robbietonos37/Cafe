@@ -25,16 +25,6 @@ public class Driver {
 
         String choice = scanner.next();
 
-        if(choice.equals("Rob's")){
-            cafe1.addCustomer(customer1);
-        }
-        else if (choice.equals("Ed's")){
-            cafe2.addCustomer(customer1);
-        }
-
-
-        System.out.println(cafe1.getCustomer(0).toString());
-
 
     }
 }
