@@ -38,20 +38,6 @@ public class Cafe {
         return cafeCustomers.get(i);
     }
 
-    public void addItemToMenu(String itemName, double itemPrice, int calories, int caffeine, String Size){
-        menuItems.add(new MenuItem(itemName, itemPrice, calories, caffeine, Size));
-        numberOfMenuItems++;
-    }
-
-    public void addItemToMenu(MenuItem menuItem){
-        menuItems.add(menuItem);
-        numberOfMenuItems++;
-    }
-
-    public void removeMenuItem(MenuItem menuItem){
-        menuItems.remove(menuItem);
-    }
-
     public void addToCustomerFavorites(Customer customer, MenuItem menuItem){
         customer.addToFavorites(menuItem);
     }

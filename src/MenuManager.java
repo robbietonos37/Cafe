@@ -22,6 +22,7 @@ public class MenuManager {
 
     public void removeMenuItem(MenuItem menuItem){
         menuItems.remove(menuItem);
+        numberOfMenuItems--;
     }
 
 }
