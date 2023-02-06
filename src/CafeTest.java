@@ -17,22 +17,6 @@ class CafeTest {
         assertEquals("Big Rob's", cafe.getCafeName());
     }
 
-
-    @Test
-    void addItemToMenu(){
-        Cafe cafe3 = new Cafe();
-        MenuItem newItem = new MenuItem();
-        cafe3.addItemToMenu(newItem);
-        assertNotNull(cafe3.menuItems.get(0));
-    }
-
-    @Test
-    void addItemToMenu2(){
-        Cafe cafeThree = new Cafe();
-        cafeThree.addItemToMenu("Cold Brew", 3.75, 10, 175, "Large");
-        assertEquals(cafeThree.menuItems.get(0).getCaffeineContent(), 175);
-    }
-
     @Test
     void addItemToCustomerFavorites(){
         Cafe cafe4 = new Cafe();

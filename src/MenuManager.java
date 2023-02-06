@@ -2,13 +2,11 @@ import java.util.ArrayList;
 
 public class MenuManager {
 
-    ArrayList<MenuItem> menuItems;
+    ArrayList<MenuItem> menuItems = new ArrayList<>();
 
     private int numberOfMenuItems = 0;
 
-    public MenuManager(){
-        ArrayList<MenuItem> menuItems = new ArrayList<>();
-    }
+
 
     public void addItemToMenu(MenuItem menuItem){
         menuItems.add(menuItem);
