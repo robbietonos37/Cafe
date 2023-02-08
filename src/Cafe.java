@@ -24,8 +24,5 @@ public class Cafe {
         return cafeName;
     }
 
-    public void addToCustomerFavorites(Customer customer, MenuItem menuItem){
-        customer.addToFavorites(menuItem);
-    }
 
 }

@@ -19,4 +19,14 @@ class CustomerManagerTest {
         assertNotNull(cafe.customerManager.getCustomer(0));
     }
 
+    @Test
+    void addItemToCustomerFavorites(){
+        Cafe cafe4 = new Cafe();
+        Customer newbie = new Customer();
+        MenuItem newCoffee = new MenuItem();
+        cafe4.customerManager.addCustomer(newbie);
+        cafe4.customerManager.getCustomer(0).addToFavorites(newCoffee);
+        assertNotNull(cafe4.customerManager.getCustomer(0).customerFavorites.get(0));
+    }
+
 }

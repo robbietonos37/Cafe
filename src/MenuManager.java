@@ -6,8 +6,6 @@ public class MenuManager {
 
     private int numberOfMenuItems = 0;
 
-
-
     public void addItemToMenu(MenuItem menuItem){
         menuItems.add(menuItem);
         numberOfMenuItems++;

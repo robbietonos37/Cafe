@@ -19,4 +19,12 @@ public class CustomerManager {
     public Customer getCustomer(int i){
         return cafeCustomers.get(i);
     }
+
+    public void addToCustomerFavorites(Customer customer, MenuItem menuItem){
+        if(!cafeCustomers.contains(customer)){
+            System.out.println("Customer does not exist");
+            return;
+        }
+        cafeCustomers.get(cafeCustomers.indexOf(customer)).addToFavorites(menuItem);
+    }
 }
