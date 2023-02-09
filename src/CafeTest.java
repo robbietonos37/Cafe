@@ -20,16 +20,6 @@ class CafeTest {
     /*
 
     @Test
-    void addItemToCustomerFavorites(){
-        Cafe cafe4 = new Cafe();
-        Customer newbie = new Customer();
-        MenuItem newCoffee = new MenuItem();
-        cafe4.addCustomer(newbie);
-        cafe4.getCustomer(0).addToFavorites(newCoffee);
-        assertNotNull(cafe4.getCustomer(0).customerFavorites.get(0));
-    }
-
-    @Test
     void addtoCustomerFavorites(){
         Cafe cafe7 = new Cafe();
         cafe7.addCustomer("Johnny", "Knoxville", "6629930293");
