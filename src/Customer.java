@@ -41,7 +41,12 @@ public class Customer {
     }
 
     public void setPhoneNumber(String phoneNumber){
-        this.phoneNumber = phoneNumber;
+        if (phoneNumber.matches("\\d+")){
+            this.phoneNumber = phoneNumber;
+        }
+        else {
+            throw new IllegalArgumentException("Phone number must only contain numbers");
+        }
     }
 
     public void updateLifeTimeSpend(double orderTotal){

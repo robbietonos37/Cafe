@@ -4,16 +4,16 @@ public class CustomerManager {
 
     ArrayList<Customer> cafeCustomers= new ArrayList<>();
 
-    private int customerCount = 0;
+    private int totalNumberOfCustomers = 0;
 
     public void addCustomer(String firstName, String lastName, String phoneNumber){
         cafeCustomers.add(new Customer(firstName, lastName, phoneNumber));
-        customerCount++;
+        totalNumberOfCustomers++;
     }
 
     public void addCustomer(Customer customer){
         cafeCustomers.add(customer);
-        customerCount++;
+        totalNumberOfCustomers++;
     }
 
     public Customer getCustomer(int i){

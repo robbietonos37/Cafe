@@ -3,8 +3,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerTest {
-
-    /*
     @Test
     void emptyConstructorTest(){
         Customer customer1 = new Customer();
@@ -12,34 +10,75 @@ class CustomerTest {
     }
 
     @Test
+    void getPhoneNumber(){
+        Customer customerOne = new Customer();
+        customerOne.setPhoneNumber("6019880000");
+        assertEquals(customerOne.getPhoneNumber(), "6019880000");
+    }
+
+    @Test
     void nonEmptyConstructorTest(){
         Customer customer2 = new Customer("Robbie","Tonos", "6019552504");
         assertEquals(customer2.getFirstName(),"Robbie");
     }
+
+    @Test
+    void getLastName(){
+        Customer customerTwo = new Customer();
+        customerTwo.setLastName("Adams");
+        assertEquals(customerTwo.getLastName(), "Adams");
+    }
+
     @Test
     void addToOrderTest(){
         Customer customer3 = new Customer();
-        Cafe cafeTest = new Cafe();
         MenuItem testFrappe = new MenuItem();
-        cafeTest.addItemToMenu(testFrappe);
-        cafeTest.addCustomer(customer3);
-        cafeTest.getCustomer(0).addToOrder(testFrappe);
-        assertEquals(cafeTest.getCustomer(0).customerOrder.get(0),testFrappe);
+        customer3.addToOrder(testFrappe);
+        assertEquals(customer3.customerOrder.get(0), testFrappe);
     }
 
     @Test
     void payForOrderTest(){
         Customer customer4 = new Customer();
-        Cafe cafeTest2 = new Cafe();
         MenuItem coldBrewSki = new MenuItem();
         coldBrewSki.setItemPrice(4.50);
-        cafeTest2.addItemToMenu(coldBrewSki);
-        cafeTest2.addCustomer(customer4);
-        cafeTest2.getCustomer(0).addToOrder(coldBrewSki);
-        cafeTest2.getCustomer(0).payForOrder();
-        assertEquals(cafeTest2.getCustomer(0).getTotalLifetimeSpend(), 4.50);
+        customer4.addToOrder(coldBrewSki);
+        customer4.payForOrder();
+        assertEquals(customer4.getTotalLifetimeSpend(), 4.50);
     }
-    */
+
+    @Test
+    void payForOrderTest2(){
+        Customer customerFour = new Customer();
+        MenuItem coldBrew10 = new MenuItem();
+        coldBrew10.setItemPrice(4.33);
+        customerFour.addToOrder(coldBrew10);
+        customerFour.payForOrder();
+        assertEquals(customerFour.customerOrder.size(), 0);
+    }
+
+    @Test
+    void getTotalOrderCost(){
+        Customer customer5 = new Customer();
+        MenuItem coldBrewer = new MenuItem();
+        coldBrewer.setItemPrice(3.75);
+        customer5.addToOrder(coldBrewer);
+        assertEquals(customer5.getTotalCost(), 3.75);
+    }
+
+    @Test
+    void getCustomerPoints(){
+        Customer customer6 = new Customer();
+        MenuItem coldBrew3 = new MenuItem();
+        coldBrew3.setItemPrice(4.75);
+        customer6.addToOrder(coldBrew3);
+        MenuItem coldBrew4 = new MenuItem();
+        coldBrew4.setItemPrice(5.75);
+        customer6.addToOrder(coldBrew4);
+        customer6.payForOrder();
+        assertEquals(customer6.getPoints(), 10);
+
+    }
 
 
 }
