@@ -49,4 +49,26 @@ class CustomerManagerTest {
         assertEquals(cafe8.customerManager.cafeCustomers.get(0).customerFavorites.get(0), shakenEspresso);
     }
 
+    @Test
+    void payForOrder(){
+        Cafe cafe9 = new Cafe();
+        Customer doodleBobber = new Customer();
+        MenuItem shakenEspresso = new MenuItem();
+        MenuItem shakenEspresso1 = new MenuItem();
+        MenuItem shakenEspresso2 = new MenuItem();
+        shakenEspresso.setItemPrice(4.75);
+        shakenEspresso1.setItemPrice(5.75);
+        shakenEspresso2.setItemPrice(6.75);
+        cafe9.customerManager.addCustomer(doodleBobber);
+        cafe9.menuManager.addItemToMenu(shakenEspresso);
+        cafe9.menuManager.addItemToMenu(shakenEspresso);
+        cafe9.menuManager.addItemToMenu(shakenEspresso);
+        cafe9.customerManager.getCustomer(0).addToOrder(shakenEspresso);
+        cafe9.customerManager.getCustomer(0).addToOrder(shakenEspresso1);
+        cafe9.customerManager.getCustomer(0).addToOrder(shakenEspresso2);
+        cafe9.customerManager.getCustomer(0).payForOrder();
+        assertEquals(cafe9.customerManager.getCustomer(0).getTotalLifetimeSpend(), 17.25);
+
+    }
+
 }
