@@ -80,5 +80,19 @@ class CustomerTest {
 
     }
 
+    @Test
+    void addTotalAmountSpentToCustomer(){
+        Customer customerSix = new Customer();
+        customerSix.updateLifeTimeSpend(7.5);
+        assertEquals(customerSix.getTotalLifetimeSpend(), 7.5);
+    }
+
+    @Test
+    void addToCustomerPoints(){
+        Customer customerSeven = new Customer();
+        customerSeven.updatePoints(13);
+        assertEquals(customerSeven.getPoints(), 13);
+    }
+
 
 }

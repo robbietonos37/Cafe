@@ -49,8 +49,8 @@ public class Customer {
         }
     }
 
-    public void updateLifeTimeSpend(double orderTotal){
-        totalLifetimeSpend += orderTotal;
+    public void updateLifeTimeSpend(double amountSpentToAdd){
+        totalLifetimeSpend += amountSpentToAdd;
     }
 
     public void updatePoints(int orderPoints){
