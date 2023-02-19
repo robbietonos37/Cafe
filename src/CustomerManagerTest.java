@@ -68,7 +68,6 @@ class CustomerManagerTest {
         cafe9.customerManager.getCustomer(0).addToOrder(shakenEspresso2);
         cafe9.customerManager.getCustomer(0).payForOrder();
         assertEquals(cafe9.customerManager.getCustomer(0).getTotalLifetimeSpend(), 17.25);
-
     }
 
 }

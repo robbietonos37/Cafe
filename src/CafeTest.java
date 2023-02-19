@@ -23,7 +23,4 @@ class CafeTest {
         cafe.setCafeName("Robert's Cafe");
         assertEquals("Robert's Cafe", cafe.getCafeName());
    }
-
-
-
 }

@@ -36,6 +36,9 @@ public class CustomerManager {
     }
 
     public void removeLastItemFromOrder(Customer customer){
-
+        if(!cafeCustomers.contains(customer)){
+            System.out.println("Customer does not exist");
+        }
+        cafeCustomers.get(cafeCustomers.indexOf(customer)).removeLastItemFromOrder();
     }
 }
