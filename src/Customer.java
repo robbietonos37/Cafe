@@ -104,6 +104,10 @@ public class Customer {
         //this will add total to customer lifetime spend and clear the current order.
     }
 
+    public void removeLastItemFromOrder(){
+        this.customerOrder.remove(this.customerOrder.size()-1);
+    }
+
     @Override
     public String toString(){
         return "Name: " + firstName + " " + lastName + "\nCustomer ID: " + customerId + "\nPhone Number: " + phoneNumber + "\nTotal Lifetime Spend: "

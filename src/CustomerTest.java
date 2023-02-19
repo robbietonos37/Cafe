@@ -77,7 +77,6 @@ class CustomerTest {
         customer6.addToOrder(coldBrew4);
         customer6.payForOrder();
         assertEquals(customer6.getPoints(), 10);
-
     }
 
     @Test

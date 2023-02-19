@@ -27,4 +27,15 @@ public class CustomerManager {
         }
         cafeCustomers.get(cafeCustomers.indexOf(customer)).addToFavorites(menuItem);
     }
+
+    public void addToCustomerOrder(Customer customer, MenuItem menuItem){
+        if(!cafeCustomers.contains(customer)){
+            System.out.println("Customer does not exist");
+        }
+        cafeCustomers.get(cafeCustomers.indexOf(customer)).addToOrder(menuItem);
+    }
+
+    public void removeLastItemFromOrder(Customer customer){
+
+    }
 }
