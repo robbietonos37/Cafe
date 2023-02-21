@@ -86,4 +86,19 @@ class CustomerManagerTest {
         assertTrue(cafe.customerManager.getCustomer(0).customerOrder.size() == 2);
     }
 
+    @Test
+    void removeLastItemFromOrder(){
+        Cafe cafe100 = new Cafe();
+        Customer robert = new Customer();
+        MenuItem coffee1 = new MenuItem();
+        MenuItem coffee2 = new MenuItem();
+        cafe100.menuManager.addItemToMenu(coffee1);
+        cafe100.menuManager.addItemToMenu(coffee2);
+        cafe100.customerManager.addCustomer(robert);
+        cafe100.customerManager.getCustomer(0).addToOrder(coffee1);
+        cafe100.customerManager.getCustomer(0).addToOrder(coffee2);
+        cafe100.customerManager.removeLastItemFromOrder(robert);
+        assertEquals(cafe100.customerManager.getCustomer(0).customerOrder.size(),1);
+    }
+
 }
