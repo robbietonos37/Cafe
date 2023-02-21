@@ -10,7 +10,7 @@ class CustomerTest {
     }
 
     @Test
-    void getPhoneNumber(){
+    void setPhoneNumber(){
         Customer customerOne = new Customer();
         customerOne.setPhoneNumber("6019880000");
         assertEquals(customerOne.getPhoneNumber(), "6019880000");
@@ -23,7 +23,7 @@ class CustomerTest {
     }
 
     @Test
-    void getLastName(){
+    void setLastName(){
         Customer customerTwo = new Customer();
         customerTwo.setLastName("Adams");
         assertEquals(customerTwo.getLastName(), "Adams");

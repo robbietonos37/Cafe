@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import java.awt.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerManagerTest {
@@ -61,13 +63,27 @@ class CustomerManagerTest {
         shakenEspresso2.setItemPrice(6.75);
         cafe9.customerManager.addCustomer(doodleBobber);
         cafe9.menuManager.addItemToMenu(shakenEspresso);
-        cafe9.menuManager.addItemToMenu(shakenEspresso);
-        cafe9.menuManager.addItemToMenu(shakenEspresso);
+        cafe9.menuManager.addItemToMenu(shakenEspresso1);
+        cafe9.menuManager.addItemToMenu(shakenEspresso2);
         cafe9.customerManager.getCustomer(0).addToOrder(shakenEspresso);
         cafe9.customerManager.getCustomer(0).addToOrder(shakenEspresso1);
         cafe9.customerManager.getCustomer(0).addToOrder(shakenEspresso2);
         cafe9.customerManager.getCustomer(0).payForOrder();
         assertEquals(cafe9.customerManager.getCustomer(0).getTotalLifetimeSpend(), 17.25);
+    }
+
+    @Test
+    void addToCustomerOrder(){
+        Cafe cafe = new Cafe();
+        Customer roberto = new Customer();
+        MenuItem newBrew = new MenuItem();
+        MenuItem newBrew1 = new MenuItem();
+        newBrew.setItemPrice(3.85);
+        newBrew1.setItemPrice(4.15);
+        cafe.customerManager.addCustomer(roberto);
+        cafe.customerManager.addToCustomerOrder(roberto,newBrew);
+        cafe.customerManager.addToCustomerOrder(roberto,newBrew1);
+        assertTrue(cafe.customerManager.getCustomer(0).customerOrder.size() == 2);
     }
 
 }
