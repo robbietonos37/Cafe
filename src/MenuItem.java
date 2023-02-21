@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class MenuItem {
 
     private int caffeineContent;
@@ -10,7 +13,7 @@ public class MenuItem {
 
     private String size;
 
-    private String flavor;
+    ArrayList<String> flavors = new ArrayList<>();
 
     MenuItem(){
         choiceName = "";
@@ -60,8 +63,20 @@ public class MenuItem {
         this.calorieContent = calorieContent;
     }
 
-    public void setFlavor(String newFlavor){
-        flavor = newFlavor;
+    public void addFlavor(String newFlavor){
+        flavors.add(newFlavor);
+    }
+
+    public void setSize(String size){
+        this.size = size;
+    }
+
+    public String getSize(){
+        return size;
+    }
+
+    public List<String> getFlavors(){
+        return flavors;
     }
 
 }
