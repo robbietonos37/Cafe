@@ -1,7 +1,5 @@
 import org.junit.jupiter.api.Test;
 
-import java.awt.*;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerManagerTest {
@@ -19,6 +17,14 @@ class CustomerManagerTest {
         Customer person1 = new Customer();
         cafe.customerManager.addCustomer(person1);
         assertNotNull(cafe.customerManager.getCustomer(0));
+    }
+
+    @Test
+    void addCustomer3(){
+        Cafe cafe = new Cafe();
+        Customer customer = new Customer();
+        cafe.customerManager.addCustomer(customer);
+        assertEquals(1, cafe.customerManager.getTotalNumberOfCustomers());
     }
 
     @Test

@@ -1,7 +1,5 @@
 import org.junit.jupiter.api.Test;
 
-import java.awt.*;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class MenuItemTest {
@@ -39,7 +37,7 @@ class MenuItemTest {
     @Test
     void nonEmptyConstructor5(){
         MenuItem menuItem = new MenuItem("Iced Americano", 2.95,10,120,"Tall");
-        assertEquals(120,menuItem.getCaffeineContent());
+        assertEquals("Tall",menuItem.getSize());
     }
 
     @Test

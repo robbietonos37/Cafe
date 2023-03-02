@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Cafe {
 
     private String cafeName;

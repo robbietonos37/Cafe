@@ -21,4 +21,8 @@ public class MenuManager {
         numberOfMenuItems--;
     }
 
+    public int getNumberOfMenuItems(){
+        return numberOfMenuItems;
+    }
+
 }

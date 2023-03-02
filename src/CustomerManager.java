@@ -41,4 +41,8 @@ public class CustomerManager {
         }
         cafeCustomers.get(cafeCustomers.indexOf(customer)).removeLastItemFromOrder();
     }
+
+    public int getTotalNumberOfCustomers(){
+        return totalNumberOfCustomers;
+    }
 }

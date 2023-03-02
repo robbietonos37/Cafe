@@ -23,6 +23,12 @@ class CustomerTest {
     }
 
     @Test
+    void nonEmptyConstructorTest2(){
+        Customer customer = new Customer("Big", "Rob", "6623235656");
+        assertEquals("Rob",customer.getLastName());
+    }
+
+    @Test
     void setLastName(){
         Customer customerTwo = new Customer();
         customerTwo.setLastName("Adams");

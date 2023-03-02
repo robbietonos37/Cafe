@@ -13,6 +13,15 @@ class MenuManagerTest {
     }
 
     @Test
+    void addItemToMenu1(){
+        Cafe cafe = new Cafe();
+        MenuItem menuItem = new MenuItem();
+        cafe.menuManager.addItemToMenu(menuItem);
+        assertEquals(1, cafe.menuManager.getNumberOfMenuItems());
+
+    }
+
+    @Test
     void addItemToMenu2(){
         Cafe cafeThree = new Cafe();
         cafeThree.menuManager.addItemToMenu("Cold Brew", 3.75, 10, 175, "Large");
