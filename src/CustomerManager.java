@@ -16,6 +16,15 @@ public class CustomerManager {
         totalNumberOfCustomers++;
     }
 
+    public void removeCustomer(Customer customer){
+        if(!cafeCustomers.contains(customer)){
+            System.out.println("Customer does not exist");
+        }
+        else{
+            cafeCustomers.remove(customer);
+        }
+    }
+
     public Customer getCustomer(int i){
         return cafeCustomers.get(i);
     }
@@ -40,6 +49,16 @@ public class CustomerManager {
             System.out.println("Customer does not exist");
         }
         cafeCustomers.get(cafeCustomers.indexOf(customer)).removeLastItemFromOrder();
+    }
+
+    public void removeThisItemFromOrder(Customer customer,MenuItem menuItem){
+        int customerIndex = cafeCustomers.indexOf(customer);
+        if(!cafeCustomers.contains(customer)){
+            System.out.println("Customer does not exist");
+        }
+        if(!cafeCustomers.get(customerIndex).customerOrder.contains(menuItem)){
+            System.out.println("Item not in order");
+        }
     }
 
     public int getTotalNumberOfCustomers(){

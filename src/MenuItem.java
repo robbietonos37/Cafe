@@ -79,4 +79,8 @@ public class MenuItem {
         return flavors;
     }
 
+    public void removeLastFlavor(){
+        this.flavors.remove(this.flavors.size()-1);
+    }
+
 }
