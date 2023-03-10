@@ -1,18 +1,22 @@
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerManagerTest {
 
+
     @Test
-    void addCustomer(){
+    void addCustomer() throws SQLException, IOException {
         Cafe cafe = new Cafe();
-        cafe.customerManager.addCustomer("Edward", "Tonos", "6019400619");
+        cafe.customerManager.addCustomer("Edward", "Tonos", "6019400619", "retono@gmail.com");
         assertNotNull(cafe.customerManager.getCustomer(0));
     }
 
     @Test
-    void addCustomer2(){
+    void addCustomer2() throws SQLException, IOException {
         Cafe cafe = new Cafe();
         Customer person1 = new Customer();
         cafe.customerManager.addCustomer(person1);
@@ -20,7 +24,7 @@ class CustomerManagerTest {
     }
 
     @Test
-    void addCustomer3(){
+    void addCustomer3() throws SQLException, IOException {
         Cafe cafe = new Cafe();
         Customer customer = new Customer();
         cafe.customerManager.addCustomer(customer);
@@ -28,7 +32,7 @@ class CustomerManagerTest {
     }
 
     @Test
-    void addItemToCustomerFavorites(){
+    void addItemToCustomerFavorites() throws SQLException, IOException {
         Cafe cafe4 = new Cafe();
         Customer newbie = new Customer();
         MenuItem newCoffee = new MenuItem();
@@ -38,16 +42,16 @@ class CustomerManagerTest {
     }
 
     @Test
-    void addtoCustomerFavorites(){
+    void addtoCustomerFavorites() throws SQLException, IOException {
         Cafe cafe7 = new Cafe();
-        cafe7.customerManager.addCustomer("Johnny", "Knoxville", "6629930293");
+        cafe7.customerManager.addCustomer("Johnny", "Knoxville", "6629930293", "email@ggma");
         cafe7.menuManager.addItemToMenu(new MenuItem("NewBrew", 4.50, 35, 145, "Large"));
         cafe7.customerManager.cafeCustomers.get(0).addToFavorites(cafe7.menuManager.menuItems.get(0));
         assertEquals(cafe7.customerManager.getCustomer(0).customerFavorites.get(0).getChoiceName(), "NewBrew");
     }
 
     @Test
-    void addToCustomerFavorites3(){
+    void addToCustomerFavorites3() throws SQLException, IOException {
         Cafe cafe8 = new Cafe();
         Customer doodleBob = new Customer();
         cafe8.customerManager.addCustomer(doodleBob);
@@ -58,7 +62,7 @@ class CustomerManagerTest {
     }
 
     @Test
-    void payForOrder(){
+    void payForOrder() throws SQLException, IOException {
         Cafe cafe9 = new Cafe();
         Customer doodleBobber = new Customer();
         MenuItem shakenEspresso = new MenuItem();
@@ -79,7 +83,7 @@ class CustomerManagerTest {
     }
 
     @Test
-    void addToCustomerOrder(){
+    void addToCustomerOrder() throws SQLException, IOException {
         Cafe cafe = new Cafe();
         Customer roberto = new Customer();
         MenuItem newBrew = new MenuItem();
@@ -93,7 +97,7 @@ class CustomerManagerTest {
     }
 
     @Test
-    void removeLastItemFromOrder(){
+    void removeLastItemFromOrder() throws SQLException, IOException {
         Cafe cafe100 = new Cafe();
         Customer robert = new Customer();
         MenuItem coffee1 = new MenuItem();
@@ -106,5 +110,7 @@ class CustomerManagerTest {
         cafe100.customerManager.removeLastItemFromOrder(robert);
         assertEquals(cafe100.customerManager.getCustomer(0).customerOrder.size(),1);
     }
+
+
 
 }

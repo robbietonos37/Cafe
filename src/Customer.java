@@ -10,19 +10,22 @@ public class Customer {
     private double totalLifetimeSpend;
     private final int customerId;
 
+    private String email;
+
     ArrayList<MenuItem> customerOrder = new ArrayList<>();
 
     ArrayList<MenuItem> customerFavorites = new ArrayList<>();
 
     Random random = new Random();
 
-    Customer(String FirstName, String LastName, String PhoneNumber){
+    Customer(String FirstName, String LastName, String PhoneNumber, String email){
         firstName = FirstName;
         lastName = LastName;
         phoneNumber = PhoneNumber;
         customerId = random.nextInt(99999998) + 1;
         points = 0;
         totalLifetimeSpend = 0;
+        this.email = email;
     }
 
     Customer(){
@@ -46,6 +49,14 @@ public class Customer {
         else {
             throw new IllegalArgumentException("Phone number must only contain numbers");
         }
+    }
+
+    public void setEmail(String email){
+        this.email = email;
+    }
+
+    public String getEmail(){
+        return this.email;
     }
 
     public void updateLifeTimeSpend(double amountSpentToAdd){

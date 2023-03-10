@@ -1,11 +1,14 @@
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class MenuManagerTest {
 
     @Test
-    void addItemToMenu(){
+    void addItemToMenu() throws SQLException, IOException {
         Cafe cafe3 = new Cafe();
         MenuItem newItem = new MenuItem();
         cafe3.menuManager.addItemToMenu(newItem);
@@ -13,7 +16,7 @@ class MenuManagerTest {
     }
 
     @Test
-    void addItemToMenu1(){
+    void addItemToMenu1() throws SQLException, IOException {
         Cafe cafe = new Cafe();
         MenuItem menuItem = new MenuItem();
         cafe.menuManager.addItemToMenu(menuItem);
@@ -22,14 +25,14 @@ class MenuManagerTest {
     }
 
     @Test
-    void addItemToMenu2(){
+    void addItemToMenu2() throws SQLException, IOException {
         Cafe cafeThree = new Cafe();
         cafeThree.menuManager.addItemToMenu("Cold Brew", 3.75, 10, 175, "Large");
         assertEquals(cafeThree.menuManager.menuItems.get(0).getCaffeineContent(), 175);
     }
 
     @Test
-    void removeItemFromMenu(){
+    void removeItemFromMenu() throws SQLException, IOException {
         Cafe cafe5 = new Cafe();
         MenuItem newFrappe = new MenuItem();
         MenuItem terribleFrappe = new MenuItem();
@@ -42,7 +45,7 @@ class MenuManagerTest {
     }
 
     @Test
-    void removeItemFromMenu2(){
+    void removeItemFromMenu2() throws SQLException, IOException {
         Cafe cafe6 = new Cafe();
         MenuItem newColdBrew = new MenuItem();
         MenuItem terribleColdBrew = new MenuItem();

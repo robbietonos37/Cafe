@@ -1,4 +1,8 @@
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.Properties;
 
 public class CustomerManager {
 
@@ -6,15 +10,66 @@ public class CustomerManager {
 
     private int totalNumberOfCustomers = 0;
 
-    public void addCustomer(String firstName, String lastName, String phoneNumber){
-        cafeCustomers.add(new Customer(firstName, lastName, phoneNumber));
-        totalNumberOfCustomers++;
+    private Connection connection;
+    private String dbUrl;
+    private String dbUsername;
+    private String dbPassword;
+
+    public CustomerManager() throws IOException, SQLException {
+        Properties props = new Properties();
+        props.load(new FileInputStream("config.properties"));
+         dbUrl = props.getProperty("db.url");
+         dbUsername = props.getProperty("db.username");
+         dbPassword = props.getProperty("db.password");
+
+        connection = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
     }
 
-    public void addCustomer(Customer customer){
+    public String getDbUrl() {
+        return dbUrl;
+    }
+
+    public String getDbUsername() {
+        return dbUsername;
+    }
+
+    public String getDbPassword() {
+        return dbPassword;
+    }
+
+    public void addCustomer(String firstName, String lastName, String phoneNumber, String email) throws SQLException {
+        cafeCustomers.add(new Customer(firstName, lastName, phoneNumber, email));
+        totalNumberOfCustomers++;
+
+        Connection conn = null;
+        Statement stmt = null;
+
+        try {
+
+            conn = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
+
+            String sql = "INSERT INTO customers (name, email, phone) VALUES (?, ?, ?)";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, firstName + " " + lastName);
+            pstmt.setString(2, email);
+            pstmt.setString(3, phoneNumber);
+            int rowsAffected = pstmt.executeUpdate();
+
+
+        } finally {
+            if(conn != null){
+                conn.close();
+            }
+        }
+    }
+
+
+        public void addCustomer(Customer customer){
         cafeCustomers.add(customer);
         totalNumberOfCustomers++;
     }
+
+
 
     public void removeCustomer(Customer customer){
         if(!cafeCustomers.contains(customer)){

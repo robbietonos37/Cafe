@@ -18,13 +18,13 @@ class CustomerTest {
 
     @Test
     void nonEmptyConstructorTest(){
-        Customer customer2 = new Customer("Robbie","Tonos", "6019552504");
+        Customer customer2 = new Customer("Robbie","Tonos", "6019552504", "ret");
         assertEquals(customer2.getFirstName(),"Robbie");
     }
 
     @Test
     void nonEmptyConstructorTest2(){
-        Customer customer = new Customer("Big", "Rob", "6623235656");
+        Customer customer = new Customer("Big", "Rob", "6623235656", "ret");
         assertEquals("Rob",customer.getLastName());
     }
 

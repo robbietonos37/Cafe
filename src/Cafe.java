@@ -1,3 +1,6 @@
+import java.io.IOException;
+import java.sql.SQLException;
+
 public class Cafe {
 
     private String cafeName;
@@ -6,11 +9,11 @@ public class Cafe {
 
     CustomerManager customerManager = new CustomerManager();
 
-    Cafe(){
+    Cafe() throws SQLException, IOException {
         cafeName = "";
     }
 
-    Cafe(String name){
+    Cafe(String name) throws SQLException, IOException {
         cafeName = name;
     }
 
