@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.sql.*;
 
+import static java.lang.System.exit;
 import static java.sql.DriverManager.getConnection;
 
 public class Driver {
@@ -12,8 +13,20 @@ public class Driver {
         Statement stmt = null;
         ResultSet rs = null;
 
+
         Cafe robs = new Cafe();
-        robs.customerManager.addCustomer("Doodle", "Bob", "1010101010", "bikinibottom@gmail");
+        int choice = 2;
+        Scanner scanner = new Scanner(System.in);
+        while(choice != -1 && choice != 0 && choice != 1) {
+            System.out.println("Please enter an option, 0 to add a cafe, 1 to add customer to a cafe, or -1 to exit");
+            choice = scanner.nextInt();
+        }
+        System.out.println(choice);
+        if (choice == -1){
+            System.exit(0);
+        }
+
+        //robs.customerManager.addCustomer("Doodle", "Bob", "1010101010", "bikinibottom@gmail");
 
 
         try {
