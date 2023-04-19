@@ -12,6 +12,7 @@ public class Driver {
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
+        ResultSet rs2 = null;
 
 
         Cafe robs = new Cafe();
@@ -43,6 +44,7 @@ public class Driver {
             // Execute a SQL statement
             stmt = conn.createStatement();
             rs = stmt.executeQuery("SELECT * FROM customers");
+            rs2 = stmt.executeQuery("SELECT * FROM menuItems");
 
             System.out.println("Customer table contents: ");
             // Process the result set
