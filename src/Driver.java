@@ -16,8 +16,11 @@ public class Driver {
 
 
         Cafe robs = new Cafe();
+        MenuItem coldBrew1 = new MenuItem("Ultimate Cold Brew", 3.75, 5, 110, "Large");
+        robs.menuManager.addItemToMenu(coldBrew1);
         int choice = 2;
         Scanner scanner = new Scanner(System.in);
+        /*
         while(choice != -1 && choice != 0 && choice != 1) {
             System.out.println("Please enter an option, 0 to add a cafe, 1 to add customer to a cafe, or -1 to exit");
             choice = scanner.nextInt();
@@ -26,6 +29,8 @@ public class Driver {
         if (choice == -1){
             System.exit(0);
         }
+
+         */
 
         //robs.customerManager.addCustomer("Doodle", "Bob", "1010101010", "bikinibottom@gmail");
 
@@ -44,6 +49,12 @@ public class Driver {
             // Execute a SQL statement
             stmt = conn.createStatement();
             rs = stmt.executeQuery("SELECT * FROM customers");
+
+            conn = DriverManager.getConnection(robs.menuManager.getDbUrl(), robs.menuManager.getDbUsername(),
+                    robs.menuManager.getDbPassword());
+
+            // Execute a SQL statement
+            stmt = conn.createStatement();
             rs2 = stmt.executeQuery("SELECT * FROM menuItems");
 
             System.out.println("Customer table contents: ");
@@ -72,6 +83,9 @@ public class Driver {
                     stmt.close();
                 }
                 if (conn != null) {
+                    conn.close();
+                }
+                if(rs2 != null){
                     conn.close();
                 }
             } catch (SQLException ex) {
