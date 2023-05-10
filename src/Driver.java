@@ -67,6 +67,16 @@ public class Driver {
                 System.out.println(id + "\t" + name + "\t" + email + "\t" + phone);
                 // Do something with each row in the result set
             }
+            //choiceName, caffeineContent, calorieContent, itemPrice
+            while (rs2.next()) {
+                int id = rs2.getInt("id");
+                String choiceName = rs2.getString("choiceName");
+                int caffeineContent = rs2.getInt("caffeineContent");
+                int calorieContent = rs2.getInt("calorieContent");
+                double itemPrice = rs2.getDouble("itemPrice");
+                System.out.println(id + "\t" + choiceName + "\t" + caffeineContent + "\t" + calorieContent + "\t" + itemPrice);
+                // Do something with each row in the result set
+            }
         } catch (SQLException ex) {
             // Handle any SQL exceptions that may occur
             ex.printStackTrace();
